@@ -1,5 +1,10 @@
 {
-  "name": "Secret Calc Vault",
+  "name": "Spectre Calculator",
   "description": "A fully functional calculator that doubles as a secure photo vault. Enter the secret code '1234=' to unlock the hidden gallery.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation",
+    "bluetooth"
+  ]
 }

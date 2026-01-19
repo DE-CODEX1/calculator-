@@ -1,9 +1,14 @@
 import { GoogleGenAI } from "@google/genai";
 
 const getClient = () => {
-  const apiKey = process.env.API_KEY;
-  if (!apiKey) return null;
-  return new GoogleGenAI({ apiKey });
+  try {
+    const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
+    if (!apiKey) return null;
+    return new GoogleGenAI({ apiKey });
+  } catch (e) {
+    console.warn("Environment check failed or API key missing", e);
+    return null;
+  }
 };
 
 export const explainMathWithGemini = async (expression: string, result: string): Promise<string> => {

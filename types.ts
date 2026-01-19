@@ -1,4 +1,6 @@
+
 export type AppMode = 'CALCULATOR' | 'VAULT';
+export type Theme = 'classic' | 'neon' | 'glass' | 'multicolor';
 
 export interface VaultItem {
   id: string;
